@@ -10,6 +10,7 @@ import {
 import margueritaimg from './img/OIP (1).jpg'
 import { useEffect } from 'react'
 import api from './configs/api'
+import Recoil from 'recoil'
 
 // fausses données
 const fakeData = [
@@ -28,7 +29,7 @@ const addSomePoint = () => {
 }
 
 function App() {
-  useEffect(() => {
+  /*useEffect(() => {
     api.get('/pizzas')
       .then((response) => {
         response.status === 200
@@ -38,24 +39,27 @@ function App() {
       .catch((err) => {
         console.error(err)
       })
-  }, [])
+  }, [])*/
 
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header"> ''
+    <Recoil.RecoilRoot>
+      <Router>
+        <div className="App">
+          <header className="App-header"> ''
 
-          <Routes>
-            <Route path='/List' element={<ListArticles articles={fakeData} />} />
-            <Route path='/Test' element={<TestComponent functionClick={addSomePoint} points={point} />} />
-            <Route path='/Pommes' element={<h1>Quel idée des pommes sur une  pizza ?!</h1>} />
-            <Route path='/Delivery' element={<FormDelivery />} />
-            <Route path='/Compteur' element={<Compteur />} />
-            <Route path='/Advice' element={<AdviceComponent />} />
-          </Routes>
-        </header>
-      </div>
-    </Router>
+            <Routes>
+              <Route path='/' element={<ListArticles articles={fakeData} />} />
+              <Route path='/List' element={<ListArticles articles={fakeData} />} />
+              <Route path='/Test' element={<TestComponent functionClick={addSomePoint} points={point} />} />
+              <Route path='/Pommes' element={<h1>Quel idée des pommes sur une  pizza ?!</h1>} />
+              <Route path='/Delivery' element={<FormDelivery />} />
+              <Route path='/Compteur' element={<Compteur />} />
+              <Route path='/Advice' element={<AdviceComponent />} />
+            </Routes>
+          </header>
+        </div>
+      </Router>
+    </Recoil.RecoilRoot>
   )
 }
 
