@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "api.js",
   "scripts": {
-    "start": "node api.js",
+    "start": "node api > logs.log 2>&1",
     "dev": "nodemon api",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

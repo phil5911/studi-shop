@@ -1,0 +1,12 @@
+[build]
+  publish = "build"            # Dossier à publier
+  command = "npm run build"    # Commande pour construire l'application
+
+[dev]                          # Configuration pour le mode de développement
+  command = "npm start"        # Commande pour démarrer l'application
+  port = 3000                  # Port sur lequel l'application s'exécute
+
+[[redirects]]                 # Configuration des redirections
+  from = "/*"                  # Redirige toutes les requêtes
+  to = "/index.html"           # Vers index.html pour les applications à page unique
+  status = 200                  # Code de statut HTTP

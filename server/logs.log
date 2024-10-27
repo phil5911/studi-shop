@@ -1,0 +1,6 @@
+
+> server@1.0.0 start
+> node api.js
+
+Server started on port 3000
+Connected to the database.
